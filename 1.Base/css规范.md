@@ -19,6 +19,7 @@
 #### 页面结构
 ` wrap ` -- 用于最外层
 ` header ` -- 用于头部
+` loginBar ` -- 登录条
 ` main ` -- 用于主体内容（中部）
 ` nav ` -- 网页菜单导航条
 ` head ` ` header ` -- 页头部分
@@ -96,6 +97,19 @@
 
 代码性能优化
 * 合并margin、padding、border的-left/-top/-right/-bottom的设置，尽量使用短名称。
+  ```css
+   .class {
+     background:bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+     /* 可以缩写为一句 */
+     background: #f00 url(background.gif) no-repeat fixed 0 0;
+
+    /* 可以缩写为一句*/
+    font: italic small-caps bold 1em/140% 'Lucida Grande', sans-serif;
+    
+    font:font-style font-variant font-weight font-size/line-height font-family;
+    
+    }
+  ```
 * 选择器应该在满足功能的基础上尽量简短，减少选择器嵌套，查询消耗。但是一定要避免覆盖全局样式设置。
 * 注意选择器的性能，不要使用低性能的选择器。
 * 禁止在css中使用*选择符。
@@ -110,3 +124,4 @@
 * CSS3属性：transform/transition/animation/box-shadow/border-radius
 * 如果使用CSS3的属性，如果有必要加入浏览器前缀，则按照 -webkit- / -moz- / -ms- / -o- / std的顺序进行添加，标准属性写在最后。
 * 链接的样式请严格按照如下顺序添加： a:link -> a:visited -> a:hover -> a:active
+* 16进制的色彩值，如果每两位的值相同，可以缩写一半(＃000000可以缩写为＃000;＃336699可以缩写为＃369)
